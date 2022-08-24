@@ -1,6 +1,6 @@
 andrewrothstein.k3sup
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-k3sup.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-k3sup)
+![Build Status](https://github.com/andrewrothstein/ansible-k3sup/actions/workflows/build.yml/badge.svg)
 
 Installs [k3sup](https://github.com/alexellis/k3sup)
 
