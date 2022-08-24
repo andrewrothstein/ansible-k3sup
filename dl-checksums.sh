@@ -13,6 +13,8 @@ dl () {
             case $arch in
                 arm64)
                     exe_suffix="-arm64" ;;
+                armhf)
+                    exe_suffix="-armhf" ;;
             esac ;;
         darwin)
             exe_suffix="-darwin" ;;
@@ -30,8 +32,9 @@ dl_ver() {
     printf "  '%s':\n" $ver
     dl $ver linux amd64
     dl $ver linux arm64
+    dl $ver linux armhf
     dl $ver darwin amd64
     dl $ver windows amd64
 }
 
-dl_ver ${1:-0.11.0}
+dl_ver ${1:-0.12.0}
