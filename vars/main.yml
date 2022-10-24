@@ -1,5 +1,7 @@
 ---
 # vars file for k3sup
+k3sup_os: '{{ ansible_system | lower }}'
+k3sup_arch: '{{ k3sup_arch_map[ansible_architecture] }}'
 k3sup_platform: '{{ k3sup_os }}-{{ k3sup_arch }}'
 k3sup_suffix: '{% if k3sup_os == "linux" %}{% if k3sup_arch == "arm64" %}-arm64{% else %}{% endif %}{% endif %}'
 k3sup_remote_exe: k3sup{{ k3sup_suffix }}
