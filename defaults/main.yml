@@ -1,6 +1,6 @@
 ---
 # defaults file for k3sup
-k3sup_ver: 0.12.15
+k3sup_ver: 0.13.0
 k3sup_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -103,3 +103,14 @@ k3sup_checksums:
     darwin-amd64: sha256:dab0206ca31fbf78d45727f88abf6c1af4e4d55cb3916f310be67d5eb717ce8f
     # https://github.com/alexellis/k3sup/releases/download/0.12.15/k3sup.exe.sha256
     windows-amd64: sha256:7ca82925b9643b600bbfb938e141a1cad3331b777dab95a572397b99116b6fc0
+  '0.13.0':
+    # https://github.com/alexellis/k3sup/releases/download/0.13.0/k3sup.sha256
+    linux-amd64: sha256:01428cd4ede3893d789a2bf8a328fe8e967851e3fe27ab41da0a52d1ce8292ff
+    # https://github.com/alexellis/k3sup/releases/download/0.13.0/k3sup-arm64.sha256
+    linux-arm64: sha256:d4fb50eb1b85df5ff856c34d58a7244902ccacf1b74c1137a7d6ba75a27ddb61
+    # https://github.com/alexellis/k3sup/releases/download/0.13.0/k3sup-armhf.sha256
+    linux-armhf: sha256:17031ca3018cfd39cfe5d5b9f83196a06febe01ca94766daeb7851cfea8d3045
+    # https://github.com/alexellis/k3sup/releases/download/0.13.0/k3sup-darwin.sha256
+    darwin-amd64: sha256:ace8f110a532bcca6fe1a099e7cd99b7952c981bc0f6cd73d1a3bb775e4aba47
+    # https://github.com/alexellis/k3sup/releases/download/0.13.0/k3sup.exe.sha256
+    windows-amd64: sha256:eb88b13e2aa583cc84d8ccffcdc3506f191010a9c2a62ded01f951ba60e3e8b0
