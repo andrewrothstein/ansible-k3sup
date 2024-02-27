@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,18 +9,18 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: download {{ k3sup_url }} to {{ k3sup_fq_exe }}
+- name: Download {{ k3sup_url }} to {{ k3sup_fq_exe }}
   become: true
   become_user: root
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ k3sup_url }}'
     dest: '{{ k3sup_fq_exe }}'
-    mode: 0755
+    mode: '755'
     checksum: '{{ k3sup_checksum }}'
-- name: link {{ k3sup_fq_exe }} to {{ k3sup_link }}
+- name: Link {{ k3sup_fq_exe }} to {{ k3sup_link }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ k3sup_fq_exe }}'
     dest: '{{ k3sup_link }}'
     state: link
