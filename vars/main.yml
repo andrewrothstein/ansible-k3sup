@@ -3,9 +3,9 @@
 k3sup_os: '{{ ansible_system | lower }}'
 k3sup_arch: '{{ k3sup_arch_map[ansible_architecture] }}'
 k3sup_platform: '{{ k3sup_os }}-{{ k3sup_arch }}'
-k3sup_suffix: '{% if k3sup_os == "linux" %}{% if k3sup_arch == "arm64" %}-arm64{% else %}{% endif %}{% endif %}'
-k3sup_remote_exe: k3sup{{ k3sup_suffix }}
+k3sup_suffix: '{{ "-arm64" if k3sup_os == "linux" and k3sup_arch == "arm64" else "" }}'
+k3sup_remote_exe: k3sup{{ k3sup_suffix | default("") }}
 k3sup_url: '{{ k3sup_mirror }}/{{ k3sup_ver }}/{{ k3sup_remote_exe }}'
-k3sup_fq_exe: '{{ k3sup_install_dir }}/k3sup-{{ k3sup_ver }}{{ k3sup_suffix }}'
+k3sup_fq_exe: '{{ k3sup_install_dir }}/k3sup-{{ k3sup_ver }}{{ k3sup_suffix | default("") }}'
 k3sup_link: '{{ k3sup_install_dir }}/k3sup'
 k3sup_checksum: '{{ k3sup_checksums[k3sup_ver][k3sup_platform] }}'
